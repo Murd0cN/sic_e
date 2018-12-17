@@ -12,6 +12,7 @@ mongoose.connect(config.database, { useNewUrlParser: true }); // connect to our 
 
 var indexRouter = require('./routes/index');
 var productItemRouter = require('./routes/productItemRouter');
+var orderRouter = require('./routes/orderRouter');
 
 var app = express();
 
@@ -34,6 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/productItems', productItemRouter);
+app.use('/orders', orderRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
