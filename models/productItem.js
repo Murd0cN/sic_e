@@ -5,13 +5,13 @@ mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);
 //const AutoIncrement = require('mongoose-sequence')(mongoose);
 
-var MaterialSchema   = new Schema({
+var ProductItemSchema   = new Schema({
     name: String
 });
 
-MaterialSchema.plugin(autoIncrement.autoIncrement,{
-    model:'Material',
+ProductItemSchema.plugin(autoIncrement.autoIncrement,{
+    model:'ProductItem',
     startAt: 1
 });
 
-module.exports = mongoose.model('Material', MaterialSchema);
+module.exports = mongoose.model('ProductItem', ProductItemSchema);
