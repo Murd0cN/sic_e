@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
-var port = process.env.PORT || 8080;        // set our port
+var port = process.env.PORT || 1337;        // set our port
 
 // ROUTES FOR OUR API
 // =============================================================================
