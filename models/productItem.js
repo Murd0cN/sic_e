@@ -5,15 +5,13 @@ mongoose.set('useCreateIndex', true);
 mongoose.set('useFindAndModify', false);
 //const AutoIncrement = require('mongoose-sequence')(mongoose);
 
-
-var OrderSchema   = new Schema({
-    name: String,
-    orderItems: [{ type: Schema.Types.Object, ref: 'ProductItem' }]
+var ProductItemSchema   = new Schema({
+    name: String
 });
 
-OrderSchema.plugin(autoIncrement.autoIncrement,{
-    model:'Order',
+ProductItemSchema.plugin(autoIncrement.autoIncrement,{
+    model:'ProductItem',
     startAt: 1
 });
 
-module.exports = mongoose.model('Order', OrderSchema);
+module.exports = mongoose.model('ProductItem', ProductItemSchema);
